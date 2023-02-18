@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody2D rigidbody;
     void Start()
     {
         
     }
-     // Текст текст текст
-     // Текст текст текст
+    
     void Update()
     {
         
