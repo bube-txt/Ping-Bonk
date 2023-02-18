@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     {
         
     }
-     //тут был авер, и это тест гит десктоп
+     // РўРµРєСЃС‚ С‚РµРєСЃС‚ С‚РµРєСЃС‚
     void Update()
     {
         
