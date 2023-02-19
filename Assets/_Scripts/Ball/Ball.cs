@@ -6,6 +6,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
     private Vector2 _direction;
+
+    public bool isDead;
     
     void Start()
     {
@@ -31,6 +33,7 @@ public class Ball : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("BottomWall"))
         {
+            isDead = true;
             _speed = 0f;
         }
     }
