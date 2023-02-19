@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +5,8 @@ using UnityEngine.InputSystem;
 // TODO: Not finished, not tested!
 public class TouchManager : MonoBehaviour
 {
+    [SerializeField] GameObject cube;
+    
     private PlayerInput _playerInput;
 
     private InputAction _touchPositionAction;
@@ -31,7 +32,22 @@ public class TouchManager : MonoBehaviour
     private void TouchPressed(InputAction.CallbackContext obj)
     {
         float value = obj.ReadValue<float>(); // tap status
-        Vector2 position = _touchPositionAction.ReadValue<Vector2>(); // tap position
+        Vector3 position = Camera.main.ScreenToWorldPoint(_touchPositionAction.ReadValue<Vector2>()); // tap position
+        position.z = cube.transform.position.z;
+
+        cube.transform.position = position;
+
         // Debug.Log(value);
+    }
+
+    private void Update()
+    {
+        if (_touchPressAction.WasPerformedThisFrame())
+        {
+            Vector3 position = Camera.main.ScreenToWorldPoint(_touchPositionAction.ReadValue<Vector2>()); // tap position
+            position.z = cube.transform.position.z;
+
+            cube.transform.position = position;
+        }
     }
 }
