@@ -72,3 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 /Assets/.idea
+.idea/.idea.Ping-Bonk/.idea/indexLayout.xml
+.idea/.idea.Ping-Bonk/.idea/workspace.xml
