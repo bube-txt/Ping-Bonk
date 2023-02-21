@@ -390,7 +390,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &410712992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c2d65df2b9c7f4a9a33476d5480593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 410712991}
-  _speed: 1
+  rigidbody: {fileID: 410712991}
+  speed: 0
 --- !u!212 &410712993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -657,6 +657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1655828992}
+  deathMenuUI: {fileID: 0}
+  ball: {fileID: 410712989}
 --- !u!114 &819857424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59944ef7100c72a488b5aa69aad034d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 1380819968}
 --- !u!212 &1380819971
 SpriteRenderer:
   m_ObjectHideFlags: 0

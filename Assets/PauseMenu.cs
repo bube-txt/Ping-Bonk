@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isDead = ball.GetComponent<Ball>().isDead;
+        bool isDead = ball.GetComponent<Ball>().IsDead();
         if (isDead)
         {
             deathMenuUI.SetActive(true);
