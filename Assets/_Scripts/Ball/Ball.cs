@@ -31,11 +31,16 @@ public class Ball : MonoBehaviour
     {
         _direction = new Vector2(UnityEngine.Random.Range(-1f, 1f),UnityEngine.Random.Range(-1f, 1f));
     }
+
+    private void RandomizeBallSpeed()
+    {
+        speed = UnityEngine.Random.Range(5f, 10f);
+    }
     
     void Start()
     {
         // Ball speed
-        speed = UnityEngine.Random.Range(3f, 4f);
+        RandomizeBallSpeed();
         RandomizeBallDirection();
     }
 
@@ -68,11 +73,7 @@ public class Ball : MonoBehaviour
         if (col.gameObject.CompareTag("TopWall"))
         {
             _score++;
-            // Randomize ball direction ever 5 score points
-            if(_score % 5 == 0)
-            {
-                RandomizeBallDirection();
-            }
+            Debug.Log(_score);
         }
         
         // Events after colliding with some game objects
@@ -92,6 +93,16 @@ public class Ball : MonoBehaviour
         else
         {
             Debug.Log(col.gameObject);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        // Randomize ball direction ever 5 score points
+        if(_score % 5 == 0 & col.gameObject.CompareTag("TopWall"))
+        {
+            RandomizeBallDirection();
+            RandomizeBallSpeed();
         }
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - BottomWall
   - RightWall
   - LeftWall
+  - Ball
   layers:
   - Default
   - TransparentFX
